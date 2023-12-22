@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import Banner from "./banner";
 
 const Home = () => {
   return (
@@ -7,7 +8,7 @@ const Home = () => {
         <title>TaskFlow | Home</title>
       </Helmet>
       <div className=" space-y-16 mb-16">
-        <h2 className=" text-2xl">Welcome</h2>
+        <Banner />
       </div>
     </div>
   );

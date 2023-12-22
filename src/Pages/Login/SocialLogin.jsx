@@ -23,7 +23,7 @@ const SocialLogin = () => {
         axiosPublic.post("/users", userInfo).then((res) => {
           console.log(res.data);
           toast("Successfully logged in!");
-          Navigate("/");
+          Navigate("/dashboard/manageTask");
         });
       })
       .catch((error) => console.log(error));

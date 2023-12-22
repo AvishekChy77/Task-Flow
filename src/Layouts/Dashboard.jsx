@@ -2,16 +2,17 @@ import { useContext } from "react";
 import { FaBars } from "react-icons/fa";
 import { MdAddCard, MdLogout } from "react-icons/md";
 import { SiGoogletagmanager } from "react-icons/si";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import MenuItem from "../Components/MenuItem/MenuItem";
 import Footer from "../Pages/Shared/Footer/Footer";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Dashboard = () => {
   const { logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleSignOut = () => {
     logOut()
-      .then()
+      .then(() => navigate("/"))
       .catch((error) => console.log(error.message));
   };
   return (

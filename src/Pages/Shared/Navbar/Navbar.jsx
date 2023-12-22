@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useUserData from "../../../Hooks/useUserData";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import "./Navbar.css";
@@ -8,10 +8,11 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
   const { userDB } = useUserData();
+  const navigate = useNavigate();
 
   const handleSignOut = () => {
     logOut()
-      .then()
+      .then(() => navigate("/"))
       .catch((error) => console.log(error.message));
   };
   const Navbar = (
@@ -19,7 +20,7 @@ const Navbar = () => {
       <NavLink className="nav" to="/">
         Home
       </NavLink>
-      <NavLink target="_blank" className="nav" to="/register">
+      <NavLink className="nav" to="/register">
         Register
       </NavLink>
       {user && (
@@ -81,18 +82,14 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content text-black mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
                 <button className="btn btn-sm btn-ghost">
                   {user.displayName}
                 </button>
               </li>
-              <li>
-                <button className="btn btn-sm btn-ghost">
-                  {userDB.occupation}
-                </button>
-              </li>
+
               <li>
                 <button
                   onClick={handleSignOut}

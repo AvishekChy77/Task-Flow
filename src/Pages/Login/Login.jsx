@@ -32,7 +32,7 @@ const Login = () => {
         e.target.reset();
         toast("Successfully logged in!");
 
-        Navigate("/");
+        Navigate("/dashboard/manageTask");
       })
       .catch((error) => {
         console.log(error.message);

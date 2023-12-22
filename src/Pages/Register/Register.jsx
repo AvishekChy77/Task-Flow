@@ -45,7 +45,7 @@ const Register = () => {
               if (res.data.insertedId) {
                 toast("Account created succesfully!");
                 reset();
-                goTo("/");
+                goTo("/dashboard/addTask");
               }
             });
             console.log(res);
