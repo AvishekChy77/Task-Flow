@@ -1,8 +1,14 @@
-# React + Vite
+# Task Flow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Task Flow is a collaborative Task Management Platform designed to enhance and streamline task management for individuals and teams. With an intuitive user interface and powerful features, Task Flow simplifies task organization and boosts productivity.
+Live Link: task-flow-tm.web.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- User-friendly task management dashboard
+- Drag-and-drop functionality for seamless task organization
+- User authentication with options for Google sign-in
+- Create, edit, and delete tasks with priority and deadline management
+- Real-time notifications for task assignments, updates, and deadlines

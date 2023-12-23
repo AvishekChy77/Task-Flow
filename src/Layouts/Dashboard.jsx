@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FaBars } from "react-icons/fa";
-import { MdAddCard, MdLogout } from "react-icons/md";
+import { MdAddCard, MdHome, MdLogout } from "react-icons/md";
 import { SiGoogletagmanager } from "react-icons/si";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import MenuItem from "../Components/MenuItem/MenuItem";
@@ -10,6 +10,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Dashboard = () => {
   const { logOut } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
   const handleSignOut = () => {
     logOut()
       .then(() => navigate("/"))
@@ -46,14 +47,19 @@ const Dashboard = () => {
         ></label>
         <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
           {/* Sidebar content here */}
-          <div className="font-logo mb-10 text-xl md:text-2xl lg:text-3xl font-bold">
-            <Link to="/">
-              <span className=" text-[#265073]">Shop</span>
-              <span className=" text-[#A2C579]">Wise</span>
-            </Link>
+          <div className="flex items-center gap-3 uppercase avatar  mb-10 text-xl md:text-2xl lg:text-3xl font-bold">
+            {/* <Link to="/">
+              <span className=" text-[#265073]">Task</span>
+              <span className=" text-[#A2C579]">Flow</span>
+            </Link> */}
+            <div className="w-10 rounded-full object-cover">
+              <img src={user.photoURL} alt="" />
+            </div>
+            <p>{user.displayName}</p>
           </div>
 
           <>
+            <MenuItem icon={MdHome} label="Home" address="/"></MenuItem>
             <MenuItem
               icon={SiGoogletagmanager}
               label="Manage Tasks"

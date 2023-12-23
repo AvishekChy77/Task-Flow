@@ -3,6 +3,7 @@ import Dashboard from "../../Layouts/Dashboard";
 import Root from "../../Layouts/Root";
 import AddTask from "../../Pages/Dashboard/AddTask/AddTask";
 import ManageTask from "../../Pages/Dashboard/ManageTask/ManageTask";
+import UpdateTask from "../../Pages/Dashboard/UpdateTask/UpdateTask";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -50,6 +51,14 @@ const Router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <AddTask />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "updateTask/:id",
+        element: (
+          <PrivateRoutes>
+            <UpdateTask />
           </PrivateRoutes>
         ),
       },
